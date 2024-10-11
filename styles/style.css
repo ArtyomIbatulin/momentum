@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Revalia&family=Roboto:wght@400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ### HEADER ### */
+
+.header {
+    padding-top: 20px;
+    font-size: larger;
+  }
+
+.container {
+    max-width: 1110px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+.input-city {
+    background-color: transparent; 
+    border: none; 
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    outline: none; 
+    font-weight: bold;
+    font-size: large;
+  }
+
+/* ### TODOLIST ### */
+
+li {
+  list-style-type:none;
+  padding: 7px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.checkbox {
+  margin-right: 5px;
+}
+
+.delete-btn {
+    cursor: pointer;
+    color: red;
+  }
+
+.input-modal {
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.input-error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 16px;
+  margin-top: -81px;
+  margin-left: 30px;
+  display: none;
+  position: absolute;
+  left: 0;
+}
+
+
+/* ### MODAL ### */
+.modal{
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  padding: 30px;
+  overflow-y: auto;
+  display: none;
+}
+
+.modal__main {
+position: relative;
+max-width: 600px;
+background-color: rgb(243, 227, 247);
+margin: auto;
+color: black;
+border-radius: 16px;
+padding: 30px;
+cursor: default;
+}
+
+.modal__title {
+  margin-bottom: 30px;
+}
+
+.modal__close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  outline: 1px solid transparent;
+  outline-offset: 3px;
+  transition: outline-color .15s ease-in-out;
+  border-radius: 3px;
+  padding: 0;
+  text-align: center;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.modal__close:focus-visible {
+  outline-color: green;
+}
+
+/* ### WEATHER ICON ### */
+.weather-icon {
+  font-size: 30px;
+  color: white;
+}
+
+/* ### BACKGROUNG IMG ### */
+body {
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center center; 
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto;
+  font-style: normal;
+  color:white
+}
+main {
+  flex: 1; 
+  display: flex;
+  text-align: center;
+  justify-content: center; 
+  align-items: center; 
+
+   
+}
+.datetime {
+  font-size: xx-large; 
+ 
+}
+
+.modal-button {
+  margin-right: 30px;
+  margin-bottom: 20px;
+  text-align: end;
+  font-size: larger;
+}
+
+
+@media (max-width: 600px) {
+  .header__container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .input-city{
+    text-align: center;
+  }
+
+}

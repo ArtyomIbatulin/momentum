@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css"
+    />
+    <title>Momentum</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <input
+          type="text"
+          class="input-city"
+          id="city"
+          value="Определение города..."
+        />
+        <div id="temperature">Загрузка...</div>
+        <div id="weather">Загрузка...</div>
+        <i id="icon" class="weather-icon wi"></i>
+      </div>
+    </header>
+    <main class="main">
+      <div class="datetime">
+        <div id="time">--:--:--</div>
+        <div id="date">-- ---, -----</div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="modal">
+        <div class="modal__main">
+          <h2 class="modal__title">Tasks</h2>
+          <div class="modal__container">
+            <div class="todolist">
+              <input type="text" class="input-modal" placeholder="Type text" />
+              <div
+                class="error-message"
+                id="error-message"
+                style="display: none"
+              >
+                The field cannot be empty
+              </div>
+              <button class="btn">Clear completed tasks</button>
+              <ul class="todo"></ul>
+            </div>
+          </div>
+          <button class="modal__close">&#10006;</button>
+        </div>
+      </div>
+      <div class="modal-button">Tasks</div>
+    </footer>
+  </body>
+  <script src="modal.js" defer></script>
+  <script src="todoList.js" defer></script>
+  <script src="geolocation.js" defer></script>
+  <script src="backgroundImg.js" defer></script>
+</html>
