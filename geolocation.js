@@ -123,7 +123,7 @@ const initializeCity = () => {
   const storedLatitude = localStorage.getItem("latitude");
   const storedLongitude = localStorage.getItem("longitude");
 
-  if ((storedCity, storedLatitude, storedLongitude)) {
+  if (storedCity || storedLatitude || storedLongitude) {
     displayCity(storedCity);
     getWeather(storedLatitude, storedLongitude);
   } else {
