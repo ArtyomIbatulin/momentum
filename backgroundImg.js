@@ -42,36 +42,42 @@ const updateDate = () => {
   const currentTime = `${hours}:${minutes}:${seconds}`;
   document.getElementById("time").textContent = currentTime;
 
-  const day = now.getDate();
-  const month = now.getMonth();
-  const weekday = now.getDay();
+  // дата собирается вручную
+  // const day = now.getDate();
+  // const month = now.getMonth();
+  // const weekday = now.getDay();
 
-  const months = [
-    "января",
-    "февраля",
-    "марта",
-    "апреля",
-    "мая",
-    "июня",
-    "июля",
-    "августа",
-    "сентября",
-    "октября",
-    "ноября",
-    "декабря",
-  ];
+  // const months = [
+  //   "января",
+  //   "февраля",
+  //   "марта",
+  //   "апреля",
+  //   "мая",
+  //   "июня",
+  //   "июля",
+  //   "августа",
+  //   "сентября",
+  //   "октября",
+  //   "ноября",
+  //   "декабря",
+  // ];
 
-  const weekdays = [
-    "воскресенье",
-    "понедельник",
-    "вторник",
-    "среда",
-    "четверг",
-    "пятница",
-    "суббота",
-  ];
+  // const weekdays = [
+  //   "воскресенье",
+  //   "понедельник",
+  //   "вторник",
+  //   "среда",
+  //   "четверг",
+  //   "пятница",
+  //   "суббота",
+  // ];
 
-  const currentDate = `${day} ${months[month]}, ${weekdays[weekday]}`;
+  // const currentDate = `${day} ${months[month]}, ${weekdays[weekday]}`;
+
+  // дата методом toLocaleDateString
+  const options = { day: "numeric", month: "long", weekday: "long" };
+  const currentDate = now.toLocaleDateString("ru-RU", options);
+
   document.getElementById("date").textContent = currentDate;
 };
 
