@@ -28,18 +28,36 @@ const setBackground = () => {
   document.body.style.backgroundImage = `url('${bgImage}')`;
 };
 
+const timeFormatter = new Intl.DateTimeFormat("ru-RU", {
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+  hour12: false,
+});
+
+const dateFormatter = new Intl.DateTimeFormat("ru-RU", {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+});
+
 const updateDate = () => {
   const now = new Date();
 
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-  let seconds = now.getSeconds();
+  // время собирается вручную
+  // let hours = now.getHours();
+  // let minutes = now.getMinutes();
+  // let seconds = now.getSeconds();
 
-  hours = hours < 10 ? "0" + hours : hours;
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-  seconds = seconds < 10 ? "0" + seconds : seconds;
+  // hours = hours < 10 ? "0" + hours : hours;
+  // minutes = minutes < 10 ? "0" + minutes : minutes;
+  // seconds = seconds < 10 ? "0" + seconds : seconds;
 
-  const currentTime = `${hours}:${minutes}:${seconds}`;
+  // const currentTime = `${hours}:${minutes}:${seconds}`;
+
+  // время через Intl.DateTimeFormat
+  const currentTime = timeFormatter.format(now);
+
   document.getElementById("time").textContent = currentTime;
 
   // дата собирается вручную
@@ -75,8 +93,11 @@ const updateDate = () => {
   // const currentDate = `${day} ${months[month]}, ${weekdays[weekday]}`;
 
   // дата методом toLocaleDateString
-  const options = { day: "numeric", month: "long", weekday: "long" };
-  const currentDate = now.toLocaleDateString("ru-RU", options);
+  // const options = { day: "numeric", month: "long", weekday: "long" };
+  // const currentDate = now.toLocaleDateString("ru-RU", options);
+
+  // дата через Intl.DateTimeFormat
+  const currentDate = dateFormatter.format(now);
 
   document.getElementById("date").textContent = currentDate;
 };
